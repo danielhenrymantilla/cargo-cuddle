@@ -3,5 +3,8 @@ name = "cargo-cuddle"
 version = "0.1.0-w-0"
 edition = "2021"
 
+license-file = "Cargo.toml"
+description = "OwO"
+
 [dependencies]
 
