@@ -1,0 +1,7 @@
+[package]
+name = "cargo-cuddle"
+version = "0.1.0-w-0"
+edition = "2021"
+
+[dependencies]
+
