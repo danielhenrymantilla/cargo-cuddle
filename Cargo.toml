@@ -1,3 +1,13 @@
+#![doc = r#""]
+[[bin]]
+path = "src/main.uwu"
+name = "cargo-cuddle"
+
+[dependencies]
+anyhow = "1.0.62"
+extension-traits = "1.0.1"
+uwuify = "0.2.2"
+
 [package]
 name = "cargo-cuddle"
 version = "0.1.0-w-0"
@@ -6,5 +16,19 @@ edition = "2021"
 license-file = "Cargo.toml"
 description = "OwO"
 
-[dependencies]
-
+build = "Cargo.toml"
+[package.metadata.build]
+script = """#]
+fn main() -> Result<(), Box<dyn ::std::error::Error>> {
+    ::std::fs::copy("src/uwu.rs", "src/main.uwu")?;
+    ::std::io::copy(
+        &mut ::std::fs::File::open("src/main.rs")?,
+        &mut
+            ::std::fs::File::options()
+                .append(true)
+                .open("src/main.uwu")?
+        ,
+    )?;
+    Ok(())
+}
+// """
