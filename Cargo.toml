@@ -1,4 +1,4 @@
-#![doc = r#""]
+#[doc = r#""]
 [[bin]]
 path = "src/main.uwu"
 name = "cargo-cuddle"
@@ -17,7 +17,6 @@ rust-version = "1.60.0"
 license-file = "Cargo.toml"
 description = "OwO"
 
-build = "Cargo.toml"
 [package.metadata.build]
 script = """#]
 fn main() -> Result<(), Box<dyn ::std::error::Error>> {
