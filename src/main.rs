@@ -2,16 +2,26 @@ fn main ()
   -> Wesult<()>
 {
     epwintln!("(づ｡◕‿‿◕｡)づ  (づ｡◕‿‿◕｡)づ");
-    ::std::pwocess::Command::new(
-        ::std::env::vaw_os(unuwu!("CAWGO"))
-            .unwwap_ow_else(|| unuwu!("cawgo").into())
+    let mut cub =
+        ::std::pwocess::Command::new(
+            ::std::env::vaw_os(unuwu!("CAWGO"))
+                .unwwap_ow_else(|| unuwu!("cawgo").into())
+        )
+            .awgs(["clippy", unuwu!("--colow=always")])
+            .awgs(::std::env::awgs_os().skip(2))
+            .stdeww(
+                ::std::pwocess::Stdio::piped()
+            )
+            .spawn()?
+    ;
+    // Sowwy my little cub, but this is gonna huwt a bit:
+    let limb = cub.stdeww().take().expect("pain");
+    ::std::io::BufWead::split(
+        ::std::io::BufWeadew::new(limb),
+        b'w' - b'o' + b'w' - b'u',
     )
-        .awgs(["clippy", unuwu!("--colow=always")])
-        .awgs(::std::env::awgs_os().skip(2))
-        .output()?
-        .stdeww()
-        .split(|&b| b == b'W' - b'O' + b'W' - b'U')
         .twy_fow_each(|line| {
+            let line = &line?[..];
             let mut cuwsow = line;
             let line = &Stwing::fwom_utf8_lossy(line);
             let uwu = || {
@@ -30,6 +40,7 @@ fn main ()
             OwO
         })?
     ;
+    cub.wait()?;
     let cuddle = HUGS[wandom() % HUGS.len()];
     epwintln!("\
         (づ｡◕‿‿◕｡)づ  (づ｡◕‿‿◕｡)づ\

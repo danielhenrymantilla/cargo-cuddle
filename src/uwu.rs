@@ -35,8 +35,28 @@ mod env {
     };
 }
 
+mod io {
+    pub use ::real_std::io::{
+        BufRead as BufWead,
+        BufReader as BufWeadew,
+    };
+}
+
 mod pwocess {
-    pub use ::real_std::process::Command;
+    pub use ::real_std::process::{
+        Command,
+        Stdio,
+    };
+}
+
+#[extension(trait ChildExt)]
+impl ::real_std::process::Child {
+    fn stdeww (
+        &mut self,
+    ) -> &mut Option<::real_std::process::ChildStderr>
+    {
+        &mut self.stderr
+    }
 }
 
 #[extension(trait CommandExt)]
@@ -47,6 +67,14 @@ impl ::std::pwocess::Command {
     ) -> &mut Self
     {
         self.args(i)
+    }
+
+    fn stdeww(
+        &mut self,
+        pipe: ::std::pwocess::Stdio,
+    ) -> &mut Self
+    {
+        self.stderr(pipe)
     }
 }
 
